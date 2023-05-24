@@ -92,7 +92,7 @@ WSGI_APPLICATION = "CoreRoot.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": os.getenv("DATABASE_NAME", "coredb"),
+        "NAME": os.getenv("DATABASE_NAME", "cored1"),
         "USER": os.getenv("DATABASE_USER", "core"),
         "PASSWORD": os.getenv("DATABASE_PASSWORD", "123qwe"),
         "HOST": os.environ.get("DATABASE_HOST", "localhost"),

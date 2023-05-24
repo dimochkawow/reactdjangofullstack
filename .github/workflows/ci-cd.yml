@@ -16,5 +16,4 @@ jobs:
                 docker-compose logs
             - name: Running Tests
               run: |
-                cat .env
                 docker-compose exec -T api pytest
