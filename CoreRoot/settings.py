@@ -153,7 +153,9 @@ REST_FRAMEWORK = {
     "PAGE_SIZE": 15,
 }
 
-CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS", "").split(",")
+CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS", "http://localhost:3000").split(
+    ","
+)
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "uploads"
