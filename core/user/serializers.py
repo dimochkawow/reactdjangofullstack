@@ -31,7 +31,7 @@ class UserSerializer(AbstractSerializer):
     def to_representation(self, instance):
         representation = super().to_representation(instance)
 
-        if not representation["avatar"]:
+        if not representation.get("avatar", None):
             representation["avatar"] = settings.DEFAULT_AVATAR_URL
             return representation
 
