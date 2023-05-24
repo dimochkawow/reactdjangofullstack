@@ -16,5 +16,5 @@ jobs:
                 docker-compose logs
             - name: Running Tests
               run: |
-                ls
+                ls -la
                 docker-compose exec -T api pytest
