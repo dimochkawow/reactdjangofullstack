@@ -32,5 +32,4 @@ jobs:
                 key: ${{ secrets.SSH_PRIVATE_KEY }}
                 passphrase: ${{ secrets.SSH_PASSPHRASE }}
                 script: |
-                  ls -la reactdjangofullstack
-                  # ./docker-ec2-deploy.sh
+                  ./reactdjangofullstack/docker-ec2-deploy.sh
