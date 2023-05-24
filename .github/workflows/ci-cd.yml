@@ -17,3 +17,19 @@ jobs:
             - name: Running Tests
               run: |
                 docker-compose exec -T api pytest
+    
+    deploy:
+        name: Deploying on EC2 via SSH
+        if: ${{ github.event_name == 'push' }}
+        needs: [build-test]
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploying Application on EC2
+              uses: appleboy/ssh-action@master
+              with:
+                host: ${{ secrets.SSH_EC2_IP }}
+                username: ${{ secrets.SSH_EC2_USER }}
+                key: ${{ secrets.SSH_PRIVATE_KEY }}
+                passphrase: ${{ secrets.SSH_PASSPHARSE }}
+                script: |
+                  ./docker-ec2-deploy.sh
