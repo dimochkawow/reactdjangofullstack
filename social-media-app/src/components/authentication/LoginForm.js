@@ -80,7 +80,7 @@ function LoginForm() {
             </div>
 
             <Button variant='primary' type='submit'>
-                Submit
+                Sign In
             </Button>
         </Form>
     )
