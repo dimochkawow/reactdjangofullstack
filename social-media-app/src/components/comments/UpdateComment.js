@@ -12,7 +12,7 @@ function UpdateComment(props) {
         body: comment.body,
         post: postId,
     })
-    const { toaster, setToaster } = useContext(Context)
+    const { setToaster } = useContext(Context)
 
     const handleClose = () => setShow(false)
 

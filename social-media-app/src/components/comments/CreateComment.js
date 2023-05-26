@@ -8,9 +8,9 @@ function CreateComment(props) {
     const { postId, refresh } = props
     const [validated, setValidated] = useState(false)
     const [form, setForm] = useState({})
-    const { toaster, setToaster } = useContext(Context)
+    const { setToaster } = useContext(Context)
     const user = getUser()
-    const [avatar, setAvatar] = useState(user.avatar)
+    const avatar = useState(user.avatar)[0]
     const handleSubmit = (event) => {
         event.preventDefault()
         const createCommentForm = event.currentTarget

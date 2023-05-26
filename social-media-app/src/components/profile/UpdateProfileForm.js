@@ -12,7 +12,7 @@ function UpdateProfileForm(props) {
     const [error, setError] = useState(null)
     const userActions = useUserActions()
     const [avatar, setAvatar] = useState()
-    const { toaster, setToaster } = useContext(Context)
+    const { setToaster } = useContext(Context)
 
     const handleSubmit = (event) => {
         event.preventDefault()

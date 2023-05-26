@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { format } from 'timeago.js'
 import { LikeFilled, LikeOutlined } from '@ant-design/icons'
 import { Image, Card, Dropdown } from 'react-bootstrap'
@@ -10,7 +10,7 @@ import UpdateComment from './UpdateComment'
 
 function Comment(props) {
     const { postId, comment, refresh } = props
-    const { toaster, setToaster } = useContext(Context)
+    const { setToaster } = useContext(Context)
     const user = getUser()
 
     const handleDelete = () => {
