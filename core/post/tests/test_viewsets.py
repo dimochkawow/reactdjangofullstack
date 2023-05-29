@@ -10,7 +10,7 @@ class TestPostViewSet:
         client.force_authenticate(user=user)
         response = client.get(self.endpoint)
         assert response.status_code == status.HTTP_200_OK
-        assert response.data["count"] == 1
+        assert len(response.data) == 1
 
     def test_retrieve(self, client, user, post):
         client.force_authenticate(user=user)
@@ -43,7 +43,7 @@ class TestPostViewSet:
     def test_list_anonymous(self, client, post):
         response = client.get(self.endpoint)
         assert response.status_code == status.HTTP_200_OK
-        assert response.data["count"] == 1
+        assert len(response.data) == 1
 
     def test_retrieve_anonymous(self, client, post):
         response = client.get(self.endpoint + str(post.public_id) + "/")

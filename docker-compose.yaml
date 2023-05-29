@@ -17,6 +17,8 @@ services:
     env_file: .env
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+  redis:
+    image: redis:alpine
   api:
     container_name: postagram_api
     build: .
@@ -31,6 +33,7 @@ services:
       - uploads_volume:/app/uploads
     depends_on:
       - db
+      - redis
 volumes:
   uploads_volume:
   postgres_data:
